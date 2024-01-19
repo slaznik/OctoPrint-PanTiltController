@@ -19,7 +19,7 @@ $(function () {
         };
 
         self.onStartup = function () {
-            var webcam = $("#webcam_container");
+            var webcam = $("#webcam_plugins_container");
             if (webcam === undefined) return;
 
             webcam.after(self.createPanel());
@@ -55,10 +55,10 @@ $(function () {
         self.createButton = function (command) {
             var button = $(
                 "<button id='control-pantilt-" +
-                    command +
-                    "' class='btn box pull-left' data-bind=\"loginState.isUser(), click: function() { $root.sendCommand('" +
-                    command +
-                    "'); }\"></button>"
+                command +
+                "' class='btn box pull-left' data-bind=\"loginState.isUser(), click: function() { $root.sendCommand('" +
+                command +
+                "'); }\"></button>"
             );
             button.append($("<i class='icon-arrow-" + command + "'></i>"));
             return button;
@@ -72,8 +72,8 @@ $(function () {
             div.append(
                 $(
                     "<input type='number' style='width: 60px' data-bind='value: " +
-                        variable +
-                        "'>"
+                    variable +
+                    "'>"
                 )
             );
 
